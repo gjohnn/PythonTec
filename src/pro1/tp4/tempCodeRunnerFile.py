@@ -1,0 +1,2 @@
+
+for linea in lineas:

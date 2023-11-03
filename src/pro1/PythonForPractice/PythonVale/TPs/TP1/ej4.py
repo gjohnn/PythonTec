@@ -1,0 +1,1 @@
+print("holaNashe"[len("1")])
