@@ -69,6 +69,7 @@ def check_col(compare_dna):
 # Checkear diagonal y tambien diagonal inversa
 def check_diag(compare_dna):
     count_times = -1
+
     for i in range(5):
         for j in range(5):
             count = 0
@@ -76,9 +77,9 @@ def check_diag(compare_dna):
             new_row = i + 1
             new_col = j + 1
             while (
-                new_row < 6
-                and new_col < 6
-                and actual_position == compare_dna[new_row][new_col]
+                    new_row < 6
+                    and new_col < 6
+                    and actual_position == compare_dna[new_row][new_col]
             ):
                 if count >= 3:
                     count_times += 1
@@ -86,6 +87,7 @@ def check_diag(compare_dna):
                 count += 1
                 new_row += 1
                 new_col += 1
+
     # Diagonal inversa
     for i in range(len(compare_dna) - 1):
         for j in range(len(compare_dna[0]) - 1):
@@ -96,9 +98,9 @@ def check_diag(compare_dna):
             actualPosition = compare_dna[i][finalCol]
             checkDiagonal = finalCol - 1
             while (
-                newRow < len(compare_dna)
-                and checkDiagonal > -1
-                and actualPosition == compare_dna[newRow][checkDiagonal]
+                    newRow < len(compare_dna)
+                    and checkDiagonal > -1
+                    and actualPosition == compare_dna[newRow][checkDiagonal]
             ):
                 count += 1
                 if count >= 3:

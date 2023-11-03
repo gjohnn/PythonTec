@@ -25,7 +25,7 @@ while exit_app != "n":
             letter_position = 1
             while len(wordADN) < 6:
                 letterADN = input(
-                    f"Ingrese letra {letter_position} ADN {i+1} (A, T, C, G): "
+                    f"Ingrese letra {letter_position} ADN {i + 1} (A, T, C, G): "
                 ).upper()
                 if letterADN in ["A", "T", "C", "G"]:
                     wordADN += letterADN
@@ -66,7 +66,7 @@ while exit_app != "n":
             # diagonal de A y de T
             "TAGAGA",
             "CTATGC",
-            "TATCAT",
+            "TCTCAT",
             "AGATGG",
             "CCCXTG",
             "TCACTT",
