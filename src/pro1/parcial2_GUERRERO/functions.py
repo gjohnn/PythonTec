@@ -1,7 +1,7 @@
 def is_mutant(dna):
     # recibe las otras funciones para no tener que llamar a todas en el main
     is_mutant = False
-    # count_times se va a ir sumando si se cumplen is_row, is_col y is_diag (diagonal y diagonal inversa)
+    # count_times se va a ir sumando si se cumplen con las funciones check
     count_times = 0
     # Meter los strings de dna en una matriz para mejor comparacion
     compare_dna = [[dna[i][j] for j in range(6)] for i in range(6)]
@@ -10,32 +10,18 @@ def is_mutant(dna):
         print(" ".join(row))
 
     # Verificar filas
-    is_row = check_row(compare_dna)
-    if is_row >= 1:
-        if is_row >= 2:
-            print("MUTANTE POR FILAS")
-        count_times += is_row
+    count_times += check_row(compare_dna)
 
     # Verificar columnas
-    is_col = check_col(compare_dna)
-    if is_col >= 1:
-        if is_col >= 2:
-            print("MUTANTE POR COLUMNAS")
-        count_times += is_col
+    count_times += check_col(compare_dna)
 
     # Verificar diagonales
-    is_diag = check_diag(compare_dna)
-    if is_diag >= 1:
-        if is_diag >= 2:
-            print("MUTANTE POR DIAGONALES")
-        count_times += is_diag
+    count_times += check_diag(compare_dna)
 
     # Determinar si es mutante segun cantidad de secuencias acertadas
-    print(f"CANTIDAD DE MUTACIONES: {count_times}")
-    if count_times >= 2:
-        is_mutant = True
+    print(f"CANTIDAD DE SECUENCIAS: {count_times}")
+    is_mutant = True if count_times>=2 else False
     return is_mutant
-
 
 # Checkear filas
 def check_row(compare_dna):
@@ -45,9 +31,7 @@ def check_row(compare_dna):
         j = 0
         while j < 5:
             count = count + 1 if compare_dna[i][j] == compare_dna[i][j + 1] else 0
-            if count >= 3:
-                count_times += 1
-                break
+            count_times = count_times+1 if count>=3 else count_times
             j += 1
     return count_times
 
@@ -70,6 +54,7 @@ def check_col(compare_dna):
 # Checkear diagonal y tambien diagonal inversa
 def check_diag(compare_dna):
     count_times = 0
+    #Diagonal
     for i in range(5):
         for j in range(5):
             count = 0
@@ -105,7 +90,7 @@ def check_diag(compare_dna):
                 count += 1
                 if count >= 3:
                     count_times += 1
-                    count = 0
+                    break
                 newRow += 1
                 checkDiagonal -= 1
     return count_times

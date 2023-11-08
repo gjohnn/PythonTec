@@ -66,10 +66,10 @@ while exit_app != "n":
             # diagonal de A y de T
             "ATCCAG",
             "CCTTTT",
-            "ATGGAC",
-            "AACTGT",
-            "CGAGTA",
-            "ACTAAG"
+            "ACGGAA",
+            "AACTAT",
+            "CGATTA",
+            "ACAAAG"
         ]
         is_mutants = "Es mutante." if is_mutant(dna_diag) else "No es mutante."
         print(is_mutants)
