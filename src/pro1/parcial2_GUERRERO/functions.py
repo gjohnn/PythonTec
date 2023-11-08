@@ -31,6 +31,7 @@ def is_mutant(dna):
         count_times += is_diag
 
     # Determinar si es mutante segun cantidad de secuencias acertadas
+    print(f"CANTIDAD DE MUTACIONES: {count_times}")
     if count_times >= 2:
         is_mutant = True
     return is_mutant
@@ -68,8 +69,7 @@ def check_col(compare_dna):
 
 # Checkear diagonal y tambien diagonal inversa
 def check_diag(compare_dna):
-    count_times = -1
-
+    count_times = 0
     for i in range(5):
         for j in range(5):
             count = 0
@@ -81,10 +81,10 @@ def check_diag(compare_dna):
                     and new_col < 6
                     and actual_position == compare_dna[new_row][new_col]
             ):
+                count += 1
                 if count >= 3:
                     count_times += 1
-                    count = 0
-                count += 1
+                    break
                 new_row += 1
                 new_col += 1
 

@@ -64,12 +64,12 @@ while exit_app != "n":
     elif option == 4:
         dna_diag = [
             # diagonal de A y de T
-            "TAGAGA",
-            "CTATGC",
-            "TCTCAT",
-            "AGATGG",
-            "CCCXTG",
-            "TCACTT",
+            "ATCCAG",
+            "CCTTTT",
+            "ATGGAC",
+            "AACTGT",
+            "CGAGTA",
+            "ACTAAG"
         ]
         is_mutants = "Es mutante." if is_mutant(dna_diag) else "No es mutante."
         print(is_mutants)
