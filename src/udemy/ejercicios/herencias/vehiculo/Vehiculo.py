@@ -23,9 +23,14 @@ class Bicicleta(Vehiculo):
 
 vehiculo = Vehiculo("Rojo", 4)
 print(f"Vehiculo | {vehiculo}")
+<<<<<<< HEAD
 
 coche = Coche("Verde", 4, 40)
 print(f"Coche | {coche}")
 
+=======
+coche = Coche("Verde", 4, 40)
+print(f"Coche | {coche}")
+>>>>>>> origin/master
 bicicleta = Bicicleta("Amarillo", 2,"BMX")
 print(f"Bicicleta | {bicicleta}")
